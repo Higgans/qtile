@@ -8,9 +8,17 @@ screens = [
     Screen(
         top=bar.Bar([   
                 widget.Sep(padding=3, linewidth=0, background="#2f343f"),
-                widget.Image(filename='~/.config/qtile/eos-c.png', margin=3, background="#2f343f", mouse_callbacks={'Button1': lambda: qtile.cmd_spawn("rofi -show combi")}),
+                widget.Image(
+                    filename='~/.config/qtile/eos-c.png',
+                    margin=3, background="#2f343f",
+                    mouse_callbacks={
+                        'Button1': lambda: 
+                        qtile.cmd_spawn("rofi -show combi")
+                        }
+                    ),
                 widget.Sep(padding=4, linewidth=0, background="#2f343f"), 
                 widget.GroupBox(
+                    padding = 1,
                     highlight_method='line',
                     this_screen_border="#5294e2",
                     this_current_screen_border="#5294e2",
@@ -42,7 +50,8 @@ screens = [
                         lambda: qtile.cmd_spawn(terminal + ' -e yay -Syu')
                     },
                     background="#2f343f"),
-                widget.Systray(icon_size = 20),
+                widget.Systray(icon_size = 35),
+                widget.Sep(padding=10, linewidth=0),
                 widget.TextBox(
                     text = '',
                     padding = 0,
@@ -50,6 +59,7 @@ screens = [
                     foreground='#2f343f'
                     ), 
                 volume,
+                widget.Sep(padding=8, linewidth=0, background="#2f343f"),
                 widget.TextBox(                                                                    
                     text = '',
                     padding = 0,
@@ -57,6 +67,7 @@ screens = [
                     foreground='#2f343f',
                     ),   
                 widget.CurrentLayoutIcon(scale=0.65),
+                widget.Sep(padding=5, linewidth=0),
                 widget.TextBox(
                     text = '',
                     padding = 0,

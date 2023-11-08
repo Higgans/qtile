@@ -25,9 +25,9 @@ class MyVolume(widget.Volume):
         self.volume = self.get_volume()
         if self.volume <= 0:
             self.text = '󰆪'
-        elif self.volume <= 15:
+        elif self.volume <= 35:
             self.text = ''
-        elif self.volume < 50:
+        elif self.volume < 75:
             self.text = ''
         else:
             self.text = ''
@@ -36,9 +36,9 @@ class MyVolume(widget.Volume):
     def _update_drawer(self, wob=False):
         if self.volume <= 0:
             self.text = '󰆪'
-        elif self.volume <= 15:
+        elif self.volume <= 35:
             self.text = ''
-        elif self.volume < 50:
+        elif self.volume < 75:
             self.text = ''
         else:
             self.text = ''
@@ -49,7 +49,7 @@ class MyVolume(widget.Volume):
                 f.write(str(self.volume) + "\n")
 
 volume = MyVolume(
-    fontsize=24,
+    fontsize=32,
     font='Font Awesome 5 Free',
     foreground=colors[4],
     background='#2f343f',

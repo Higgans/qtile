@@ -2,7 +2,7 @@ from libqtile.config import Key, Group
 from libqtile.command import lazy
 from .keys import keys, mod
 
-groups = [Group(i) for i in "123456"]
+groups = [Group(i) for i in "123456789"]
 
 for i in groups:
     keys.extend([

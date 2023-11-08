@@ -10,6 +10,7 @@ keys = [
     Key([mod], "s", lazy.spawn("steam"), desc="spawn steam"),
     Key([mod], "f", lazy.spawn("firefox"), desc="spawn firefox"),
     Key([mod], "c", lazy.spawn("code"), desc="spawn vscode oss"),
+    Key([mod, "shift"], "s", lazy.spawn('flameshot'), desc="starts screenshot utility"),
 
     # Switch between windows
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
