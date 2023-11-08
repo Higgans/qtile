@@ -17,5 +17,5 @@ wmname = "Qtile"
 widget_defaults = dict(
         font='Cascadia Code',
         fontsize=20,
-        padding=3
+        padding=10
 )
