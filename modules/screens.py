@@ -59,6 +59,15 @@ screens = [
                     foreground='#2f343f'
                     ), 
                 volume,
+                widget.Image(
+                    filename='~/.config/qtile/calculator.png',
+                    margin=3,
+                    background="#2f343f",
+                    mouse_callbacks={
+                        'Button1': lambda: 
+                        qtile.cmd_spawn("gnome-calculator")
+                        }
+                    ),
                 widget.Sep(padding=8, linewidth=0, background="#2f343f"),
                 widget.TextBox(                                                                    
                     text = '',
