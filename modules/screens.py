@@ -59,6 +59,7 @@ screens = [
                     foreground='#2f343f'
                     ), 
                 volume,
+                #brightness,
                 widget.Image(
                     filename='~/.config/qtile/calculator.png',
                     margin=3,

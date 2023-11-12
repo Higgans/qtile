@@ -11,13 +11,18 @@ colors = [
     ["#e1acff", "#e1acff"], # window name
     ["#ecbbfb", "#ecbbfb"]  # backbround for inactive screens
 ] 
-
-
 widget_defaults = dict(
     font='Cantarell',
     fontsize=12,
     padding=3,
 )
+icon_ = [
+    ["/usr/share/icons/ePapirus-Dark/symbolic/status/display-brightness-off-symbolic.svg"],
+    ["/usr/share/icons/ePapirus-Dark/symbolic/status/display-brightness-low-symbolic.svg"],
+    ["/usr/share/icons/ePapirus-Dark/symbolic/status/display-brightness-medium-symbolic.svg"],
+    ["/usr/share/icons/ePapirus-Dark/symbolic/status/display-brightness-high-symbolic.svg"],
+]
+
 extension_defaults = widget_defaults.copy()
 class MyVolume(widget.Volume):
     def _configure(self, qtile, bar):
@@ -55,3 +60,38 @@ volume = MyVolume(
     background='#2f343f',
     mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn("pavucontrol")}
 )
+
+# class MyBrightness(widget.Brightness):
+#     def _configure(self, qtile, bar):
+#         widget.Brightness._configure(self, qtile, bar)
+#         self.brightness = self.get_brightness()
+#         if self.brightness <= 0:
+#             self.filename = icon_[0]
+#         elif self.brightness <= 35:
+#             self.filename = icon_[1]
+#         elif self.brightness < 75:
+#             self.filename = icon_[2]
+#         else:
+#             self.filename = icon_[3]
+#         # drawing here crashes Wayland
+
+#     def _update_drawer(self, wob=False):
+#         if self.brightness <= 0:
+#             self.filename = icon_[0]
+#         elif self.brightness <= 35:
+#             self.filename = icon_[1]
+#         elif self.brightness < 75:
+#             self.filename = icon_[2]
+#         else:
+#             self.filename = icon_[3]
+#         self.draw()
+
+#         if wob:
+#             with open(self.wob, 'a') as f:
+#                 f.write(str(self.brightness) + "\n")
+
+# brightness = MyBrightness(
+#     fontsize=32,
+#     foreground=colors[4],
+#     background='#2f343f',
+# )
